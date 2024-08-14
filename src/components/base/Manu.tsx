@@ -5,7 +5,9 @@ import { HomeIcon, PlusIcon } from "@radix-ui/react-icons";
 
 function Manu() {
   return (
-    <Card className="w-[250px] h-full min-h-screen flex  flex-col  px-10 gap-3 text-xl font-semibold">
+    <>
+    <div className="w-[250px] h-full min-h-screen flex  flex-col  px-10 gap-3 text-xl font-semibold "></div>
+    <div className="w-[250px] h-full min-h-screen flex  flex-col  px-10 gap-3 text-xl font-semibold fixed shadow-none border-r  bg-white">
       <Link href={"/"} className="text-3xl font-bold mt-10   ">
         Fity Admin
       </Link>
@@ -23,7 +25,7 @@ function Manu() {
         <PlusIcon className="w-5 h-5" />
         Create
       </Link>
-    </Card>
+    </div></>
   );
 }
 
