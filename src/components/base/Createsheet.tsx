@@ -131,9 +131,9 @@ const Createsheet: React.FC = () => {
     <Sheet>
       <SheetTrigger asChild>
         <Card className="w-48 h-48 p-4 flex flex-col items-center justify-center cursor-pointer">
-          <div className="text-center">
+          <div className="text-center flex flex-col items-center justify-center">
             <h1 className="font-semibold mb-2">Create Collection</h1>
-            <div className="bg-purple-100 py-2 px-1 rounded-md flex items-center justify-center">
+            <div className="bg-purple-100 p-2 w-max rounded-md flex items-center justify-center">
               <PlusIcon className="w-8 h-8" color="#892CDC" />
             </div>
           </div>

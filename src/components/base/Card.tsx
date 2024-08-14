@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Card } from "../ui/card";
+import Link from "next/link";
 interface CardProps {
     imageUrl: string;
     title: string;
@@ -8,6 +9,7 @@ interface CardProps {
 }
 const ImprovedCard = ({imageUrl, title, id}: CardProps) => {
   return (
+    <Link href={`/collection/${id}`}>
     <div className="w-48 h-48 p-4  hover:transform hover:scale-105 transition-all">
     <Image
       src={imageUrl}
@@ -18,6 +20,7 @@ const ImprovedCard = ({imageUrl, title, id}: CardProps) => {
     />
     <p>{title}</p>
   </div>
+  </Link>
   );
 };
 
