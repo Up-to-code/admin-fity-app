@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { updateMuiscInfoCollectionListMusics } from "@/lib/firebase/FirebaseServes";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 interface DialogEditNameOfMuiscProps {
   children: React.ReactNode;
   id: string;
