@@ -3,7 +3,7 @@ import Image from "next/image";
 import { IoIosPlay, IoIosPause } from "react-icons/io";
 import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "@/lib/firebase/firebaseConfig";
-
+import { MdEdit } from "react-icons/md";
 interface ItemProps {
   name: string;
   url: string;
@@ -39,7 +39,6 @@ const Item: React.FC<ItemProps> = ({ name, url, createdAt, updatedAt ,id ,id_of_
   };
 
   return (
-    <DialogEditNameOfMuisc name={name} id={id_of_collection} muisc_id={id}>
     <div className="relative h-64 w-64 rounded-md overflow-hidden group bg-gray-800 shadow-lg">
       <Image
         src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84a5d9bc4a4739c8f0669ca09b"
@@ -75,8 +74,12 @@ const Item: React.FC<ItemProps> = ({ name, url, createdAt, updatedAt ,id ,id_of_
           Updated: {new Date(updatedAt).toLocaleDateString()}
         </p>
       </div>
+      <div className="absolute top-2 right-2 p-3  rounded-full shadow-lg transition-transform duration-200 hover:scale-110 active:scale-100 z-10 cursor-pointer">
+      <DialogEditNameOfMuisc name={name} id={id_of_collection} muisc_id={id}>
+      <MdEdit  color="#fff" size={25} />
+      </DialogEditNameOfMuisc>
+      </div>
     </div>
-    </DialogEditNameOfMuisc>
   );
 };
 
