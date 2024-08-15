@@ -1,4 +1,11 @@
-import { addDoc, collection, doc, getDocs, increment, updateDoc } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  doc,
+  getDocs,
+  increment,
+  updateDoc,
+} from "firebase/firestore";
 import { db, storage } from "./firebaseConfig";
 import { ref, uploadBytes } from "firebase/storage";
 
@@ -12,7 +19,6 @@ export async function getCollectionList(id: string) {
     throw error;
   }
 }
-
 
 export async function uploadCollectionListMusics(
   id: string,
@@ -37,11 +43,27 @@ export async function uploadCollectionListMusics(
         // Update upload count
         const counterRef = doc(db, "muisces", id);
         await updateDoc(counterRef, {
-          uploadCount: increment(1) // Increment the upload count
+          uploadCount: increment(1), // Increment the upload count
         });
       } catch (error) {
         throw error;
       }
+    });
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function updateMuiscInfoCollectionListMusics(
+  id: string,
+  muisc_id: string,
+  data: { name: string }
+) {
+  try {
+    const docRef = doc(db, "muisces", id, "list", muisc_id);
+    await updateDoc(docRef, {
+      name: data.name,
+      UpdatedAt: new Date(),
     });
   } catch (error) {
     throw error;

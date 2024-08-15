@@ -11,6 +11,7 @@ interface DataItem {
   url: string;
   CreatedAt: string; // ISO date string
   UpdatedAt: string; // ISO date string
+  id_of_collection: string;
 }
 
 function List({ id }: { id: string }) {
@@ -92,6 +93,8 @@ function List({ id }: { id: string }) {
                     url={item.url}
                     createdAt={item.CreatedAt}
                     updatedAt={item.UpdatedAt}
+                    id={item.id}
+                    id_of_collection={id}
                   />
                 </motion.div>
               ))}

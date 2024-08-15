@@ -9,11 +9,14 @@ interface ItemProps {
   url: string;
   createdAt: string; // ISO date string
   updatedAt: string; // ISO date string
+  id : string
+  id_of_collection : string
 }
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { DialogEditNameOfMuisc } from "./DlaogEdit_Name_of_muisc";
 
 
-const Item: React.FC<ItemProps> = ({ name, url, createdAt, updatedAt }) => {
+const Item: React.FC<ItemProps> = ({ name, url, createdAt, updatedAt ,id ,id_of_collection }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
@@ -36,6 +39,7 @@ const Item: React.FC<ItemProps> = ({ name, url, createdAt, updatedAt }) => {
   };
 
   return (
+    <DialogEditNameOfMuisc name={name} id={id_of_collection} muisc_id={id}>
     <div className="relative h-64 w-64 rounded-md overflow-hidden group bg-gray-800 shadow-lg">
       <Image
         src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84a5d9bc4a4739c8f0669ca09b"
@@ -72,6 +76,7 @@ const Item: React.FC<ItemProps> = ({ name, url, createdAt, updatedAt }) => {
         </p>
       </div>
     </div>
+    </DialogEditNameOfMuisc>
   );
 };
 
